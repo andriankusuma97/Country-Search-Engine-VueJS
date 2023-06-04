@@ -56,17 +56,17 @@ export default {
         <img :src="flags" :alt="fullName" style="width: 46px; height: 30px" />
       </div>
       <div class="mt-0 flex items-center space-x-2">
-        <div v-if="dataCountries.cca2" class="rectangle">
+        <div v-if="dataCountries?.cca2" class="rectangle">
           <span>
             {{ dataCountries?.cca2 }}
           </span>
         </div>
-        <div v-if="dataCountries.name.official" class="rectangle">
+        <div v-if="dataCountries.name?.official" class="rectangle">
           <span>
             {{ dataCountries.name?.official }}
           </span>
         </div>
-        <div v-if="dataCountries.name.nativeName.ind.official" class="rectangle">
+        <div v-if="dataCountries.name.nativeName.ind?.official" class="rectangle">
           <span>
             {{ dataCountries.name?.nativeName?.ind?.official }}
           </span>
@@ -74,7 +74,7 @@ export default {
       </div>
     </div>
 
-    <div class="flex">
+    <div class="flex mt-5">
       <div class="firstCard flex flex-col">
         <span class="header2">LatLong</span>
         <span class="textContent">{{ latLong }}</span>
@@ -96,17 +96,24 @@ export default {
       <div class="secondCard flex flex-col">
         <span class="header2">Calling Code</span>
         <span class="textContent">{{ callingCode }}</span>
+        <span class="">
+          <span class="text-purpleSecondary text-bold underline">
+            {{ countriesWithSameCallingCode.length }} country
+          </span>
+          with this currency</span
+        >
       </div>
       <div class="secondCard flex flex-col">
         <span class="header2">Currency</span>
         <span class="textContent">{{ currency }}</span>
+        <span class="">
+          <span class="text-purpleSecondary text-bold underline">
+            {{ countriesWithSameCurrency.length }} country
+          </span>
+          with this currency</span
+        >
       </div>
     </div>
-
-    <!-- <h1>Calling Code: {{ callingCode }}</h1>
-    <h1>Countries with the Same Calling Code: {{ countriesWithSameCallingCode }}</h1>
-    <h1>Currency: {{ currency }}</h1>
-    <h1>Countries with the Same Currency: {{ countriesWithSameCurrency }}</h1> -->
   </div>
 </template>
 

@@ -5,7 +5,8 @@ module.exports = {
    theme: {
      extend: {
       colors:{
-        'purple':'rgba(131, 98, 242, 0.5)'
+        'purple':'rgba(131, 98, 242, 0.5)',
+        'purpleSecondary': '#8362F2'
       }
      },
    },
